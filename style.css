@@ -1,0 +1,155 @@
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-size: 1.4rem;
+}
+
+.nav-bar {
+	background-color: crimson;
+	padding: 24px 12px;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: height 29s;
+	gap: 20px;
+	overflow: hidden;
+	box-shadow: 4px 10px 27px rgba(180, 41, 99, 0.35);
+}
+.nav-group {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+}
+
+.nav-item {
+	/*   padding: 12 24px; */
+	padding-right: 40px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.show {
+	display: flex;
+	flex-direction: row;
+}
+
+.fa-bars:hover {
+	color: #dedede;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: #efefef;
+}
+
+.nav-link:hover {
+	transition: ease 0.6s;
+	transform: scale("2.0");
+	color: lightcoral;
+}
+
+/* Hamburger menu - mobile, tablet   */
+
+.bar {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-color: crimson;
+}
+
+.hamburger {
+	display: none;
+	width: 35px;
+	height: fit-content;
+	margin: 5px auto;
+	padding: 6px 8px;
+	background-color: lightcoral;
+	color: #ffffff;
+	border: 2px solid #dedede;
+	border-radius: 4px;
+}
+
+.hamburger:hover,
+.hamburger:active {
+	box-shadow: 4px 10px 27px rgba(180, 41, 99, 0.5);
+}
+
+.hamburger.active .bar:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}
+
+@media screen and (max-width: 600px) {
+	/* .nav-wrap {
+		display: none;
+	} */
+
+	.nav-bar {
+		height: 45px;
+		/* border-bottom: 3px solid lightcoral; */
+	}
+
+	.nav-group {
+		position: fixed;
+		left: 0%;
+		top: 5rem;
+		background-color: crimson;
+		width: 100%;
+		/* comment above or tweak to adjust menu width */
+		text-align: center;
+		box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+		justify-content: space-around;
+		height: 100%;
+		-webkit-transition: all 0.3s ease-in-out;
+		transition: all 0.5s ease-in-out;
+	}
+
+	.hamburger {
+		display: block;
+		cursor: pointer;
+		position: absolute;
+		top: 0%;
+		right: 5vw;
+		margin: 24px 0;
+	}
+	.outline {
+		border: none;
+		background-color: transparent;
+	}
+
+	.outline.hamburger:active,
+	.outline.hamburger:hover {
+		box-shadow: none;
+	}
+
+	.outline .bar {
+		background-color: lightcoral;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	.show {
+		flex-direction: column;
+		z-index: -2;
+	}
+
+	/* .nav-item {
+		margin: 2.5rem 0;
+	} */
+}
